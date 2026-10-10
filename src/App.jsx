@@ -4,6 +4,7 @@ import References from './components/References.jsx'
 import Curriculum from './components/Curriculum.jsx'
 import Reviews from './components/Reviews.jsx'
 import LectureList from './components/LectureList.jsx'
+import Career from './components/Career.jsx'
 import Contact from './components/Contact.jsx'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Curriculum />
         <Reviews />
         <LectureList />
+        <Career />
         <Contact />
       </main>
     </>
