@@ -9,3 +9,5 @@ export function render() {
     </StrictMode>,
   )
 }
+
+export { profile, programs } from './data/site.js'

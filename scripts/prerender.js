@@ -9,10 +9,32 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, process.env.OUT_DIR || 'dist')
 const ssrDir = path.join(root, 'dist-ssr')
 
-const { render } = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href)
+const { render, profile, programs } = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href)
 
 let html = fs.readFileSync(path.join(dist, 'index.html'), 'utf-8')
 html = html.replace('<!--app-html-->', render())
+
+// 강의 프로그램을 검색엔진이 이해하는 구조화 데이터(Course)로 넣습니다.
+const courses = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${profile.name} 강사 대표 강의 프로그램`,
+  itemListElement: programs.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Course',
+      name: p.title,
+      description: `${p.target} 대상 · ${p.duration}. ${p.outcomes.join(', ')}`,
+      inLanguage: 'ko',
+      provider: { '@type': 'Person', name: profile.name },
+    },
+  })),
+}
+html = html.replace(
+  '<!--jsonld-courses-->',
+  `<script type="application/ld+json">${JSON.stringify(courses)}</script>`,
+)
 
 const site = SITE_URL.replace(/\/$/, '')
 // '/images/a.jpg' 나 '/-/images/a.jpg' 같은 경로를 전체 주소로 바꿉니다.
