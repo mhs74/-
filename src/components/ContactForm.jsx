@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { inquiryForm, profile, programs } from '../data/site.js'
-import { emptyInquiry, inquiryMailto, sendInquiry, validateInquiry } from '../lib/inquiry.js'
+import { emptyInquiry, inquiryMailto, sendInquiry, sendToSheet, validateInquiry } from '../lib/inquiry.js'
 import './ContactForm.css'
 
 const ORDER = ['org', 'name', 'phone', 'email', 'agree']
@@ -10,7 +10,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | sent | mailto | error
   const formRef = useRef(null)
-  const direct = Boolean(inquiryForm.accessKey)
+  const direct = Boolean(inquiryForm.sheetUrl || inquiryForm.accessKey)
 
   const set = (key) => (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -40,7 +40,8 @@ export default function ContactForm() {
 
     setStatus('sending')
     try {
-      await sendInquiry(inquiryForm.accessKey, values)
+      if (inquiryForm.sheetUrl) await sendToSheet(inquiryForm.sheetUrl, values)
+      else await sendInquiry(inquiryForm.accessKey, values)
       setStatus('sent')
       setValues(emptyInquiry)
     } catch {
@@ -98,7 +99,7 @@ export default function ContactForm() {
       <input type="checkbox" name="botcheck" className="f-bot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <div className="f-row">
-        {field('org', '기관명', { autoComplete: 'organization', placeholder: '예: ○○공사 인재개발팀' }, true)}
+        {field('org', '회사(기관)·직함', { autoComplete: 'organization', placeholder: '예: ○○공사 인재개발팀 과장' }, true)}
         {field('name', '담당자', { autoComplete: 'name', placeholder: '성함' }, true)}
       </div>
       <div className="f-row">

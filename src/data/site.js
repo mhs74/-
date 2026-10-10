@@ -116,10 +116,12 @@ export const career = [
   },
 ]
 
-// 섭외 문의 폼
-// accessKey 를 넣으면 문의가 이메일로 자동 전송됩니다. (https://web3forms.com 에서 이메일 인증 후 발급)
-// 비어 있으면 [보내기]를 눌렀을 때 방문자의 메일 앱이 내용이 채워진 채로 열립니다.
+// 섭외 문의 폼 — 아래 순서로 먼저 채워진 방식을 씁니다.
+// 1. sheetUrl: 구글 시트 Apps Script 웹 앱 주소(…/exec). 시트 저장 + 알림 메일 + 자동 회신. (apps-script/README.md 참고)
+// 2. accessKey: Web3Forms 접근 키. 문의가 이메일로 자동 전송됩니다.
+// 3. 둘 다 비어 있으면 [보내기]를 눌렀을 때 방문자의 메일 앱이 내용이 채워진 채로 열립니다.
 export const inquiryForm = {
+  sheetUrl: '',
   accessKey: '',
   formats: ['오프라인 출강', '온라인(Zoom 등)', '협의 필요'],
 }
