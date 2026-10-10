@@ -67,9 +67,9 @@
   padding-top: 28px;
   border-top: 1px solid var(--c-line);
 }
-.proof-item { display: flex; flex-direction: column-reverse; padding-right: 32px; margin-right: 32px; border-right: 1px solid var(--c-line); }
+.proof-item { display: flex; flex-direction: column; padding-right: 32px; margin-right: 32px; border-right: 1px solid var(--c-line); }
 .proof-item:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
-.proof dd { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.04em; color: var(--c-ink); line-height: 1.2; }
+.proof dd { order: -1; margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.04em; color: var(--c-ink); line-height: 1.2; }
 .proof dt { font-size: 13.5px; color: var(--c-muted); margin-top: 4px; }
 
 .hero-figure { position: relative; margin: 0; justify-self: center; width: 100%; max-width: 440px; }

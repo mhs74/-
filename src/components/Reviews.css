@@ -48,6 +48,13 @@
 .insta-link { font-size: 14.5px; font-weight: 600; color: var(--c-ink-2); text-decoration: none; padding-left: 4px; }
 .insta-link:hover { color: var(--c-accent); }
 
+@media (max-width: 640px) {
+  .review-panel { padding: 28px 20px; border-radius: 22px; }
+  .blog-btn { padding: 16px; gap: 12px; }
+  .blog-icon { width: 42px; height: 42px; font-size: 19px; }
+  .blog-label strong { font-size: 16px; }
+}
+
 @media (max-width: 960px) {
-  .review-panel { grid-template-columns: 1fr; gap: 32px; }
+  .review-panel { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }

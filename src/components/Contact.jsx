@@ -15,7 +15,7 @@ export default function Contact() {
         <div>
           <span className="eyebrow">Contact</span>
           <h2 id="contact-title" className="contact-title">
-            구성원이 다음 날 바로 쓰는
+            구성원이 다음 날 바로 쓰는{' '}
             <br />
             AI 교육, 함께 설계하겠습니다.
           </h2>

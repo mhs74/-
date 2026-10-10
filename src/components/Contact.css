@@ -52,6 +52,11 @@
 @media (max-width: 960px) {
   .contact-inner { grid-template-columns: 1fr; align-items: start; }
 }
+@media (max-width: 400px) {
+  .contact-title { font-size: 26px; }
+  .contact-title br { display: none; }
+}
+
 @media (max-width: 640px) {
   .site-footer { flex-direction: column; align-items: flex-start; }
   .contact-lines a { flex-direction: column; gap: 2px; }
