@@ -7,7 +7,7 @@ export const profile = {
   slogan: ['아름다움에', 'AI를 더하다'],
   summary:
     '아모레퍼시픽에서 26년간 지도강사·수석강사·교육담당으로 현장을 가르쳐 왔습니다. 그 경험 위에 생성형 AI를 더해, 구성원이 다음 날 바로 쓰는 실무형 AI 교육을 설계합니다.',
-  photo: '/images/seomihwa-ai-lecturer.jpg',
+  photo: `${import.meta.env.BASE_URL}images/seomihwa-ai-lecturer.jpg`,
   email: 'meshe921@gmail.com',
   phone: '010-2126-2533',
   blog: 'https://blog.naver.com/ai_seach',

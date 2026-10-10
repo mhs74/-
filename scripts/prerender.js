@@ -15,11 +15,15 @@ let html = fs.readFileSync(path.join(dist, 'index.html'), 'utf-8')
 html = html.replace('<!--app-html-->', render())
 
 const site = SITE_URL.replace(/\/$/, '')
+// '/images/a.jpg' 나 '/-/images/a.jpg' 같은 경로를 전체 주소로 바꿉니다.
+const absolute = (p) => {
+  const u = new URL(site + '/')
+  return p.startsWith(u.pathname) ? u.origin + p : site + p
+}
 if (site) {
   html = html
     .replace('<!--canonical-->', `<link rel="canonical" href="${site}/" />\n    <meta property="og:url" content="${site}/" />`)
-    .replaceAll('content="/images/', `content="${site}/images/`)
-    .replace('"image": "/images/', `"image": "${site}/images/`)
+    .replace(/(content="|"image": ")(\/[^"]*?images\/)/g, (_, prefix, p) => prefix + absolute(p))
     .replace('"name": "서미화",', `"name": "서미화",\n        "url": "${site}/",`)
 
   const today = new Date().toISOString().slice(0, 10)
