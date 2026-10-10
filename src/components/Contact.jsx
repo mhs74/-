@@ -26,7 +26,7 @@ export default function Contact() {
           <a className="btn btn-primary contact-main" href={`mailto:${profile.email}?subject=${mailSubject}&body=${mailBody}`}>
             이메일로 강의 의뢰하기 <span className="arrow" aria-hidden="true">→</span>
           </a>
-          <div className="contact-lines">
+          <address className="contact-lines">
             <a href={`mailto:${profile.email}`}>
               <span>이메일</span>
               {profile.email}
@@ -35,26 +35,10 @@ export default function Contact() {
               <span>전화</span>
               {profile.phone}
             </a>
-          </div>
+          </address>
         </div>
       </div>
 
-      <footer className="container site-footer">
-        <p>
-          © {profile.title} {profile.name}
-        </p>
-        <nav aria-label="외부 채널">
-          <a href={profile.blog} target="_blank" rel="noopener noreferrer">
-            블로그
-          </a>
-          <a href={profile.instagram} target="_blank" rel="noopener noreferrer">
-            인스타그램
-          </a>
-          <a href={profile.linktree} target="_blank" rel="noopener noreferrer">
-            링크 모음
-          </a>
-        </nav>
-      </footer>
     </section>
   )
 }

@@ -7,7 +7,8 @@ export default function References() {
       <div className="container">
         <div className="ref-head">
           <h2 id="references-title" className="ref-title">
-            26년 현장 경력과 <br className="br-mobile" />
+            26년 현장 경력과{' '}
+            <br className="br-mobile" />
             AI 전문 기관 활동으로 검증된 강사
           </h2>
           <p className="ref-note">경력 · 활동 기관</p>

@@ -20,6 +20,7 @@ if (site) {
     .replace('<!--canonical-->', `<link rel="canonical" href="${site}/" />\n    <meta property="og:url" content="${site}/" />`)
     .replaceAll('content="/images/', `content="${site}/images/`)
     .replace('"image": "/images/', `"image": "${site}/images/`)
+    .replace('"name": "서미화",', `"name": "서미화",\n        "url": "${site}/",`)
 
   const today = new Date().toISOString().slice(0, 10)
   fs.writeFileSync(

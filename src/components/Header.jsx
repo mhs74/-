@@ -3,9 +3,10 @@ import { profile } from '../data/site.js'
 import './Header.css'
 
 const links = [
-  { href: '#references', label: '경력·활동' },
+  { href: '#references', label: '활동 기관' },
   { href: '#curriculum', label: '커리큘럼' },
   { href: '#reviews', label: '수강 후기' },
+  { href: '#career', label: '경력' },
 ]
 
 export default function Header() {

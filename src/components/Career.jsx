@@ -8,7 +8,7 @@ export default function Career() {
         <div className="career-intro">
           <span className="eyebrow">Career</span>
           <h2 id="career-title" className="section-title">
-            현장에서 쌓은
+            현장에서 쌓은{' '}
             <br />
             교육 경력
           </h2>
@@ -19,12 +19,12 @@ export default function Career() {
           {career.map((c) => (
             <li className={`tl-item${c.status === '現' ? ' is-current' : ''}`} key={c.title}>
               <div className="tl-when">
-                {c.period && <time className="tl-period">{c.period}</time>}
+                {c.period && <span className="tl-period">{c.period}</span>}
                 <span className="tl-label">{c.label}</span>
               </div>
               <div className="tl-body">
                 <h3 className="tl-title">
-                  {c.status && <span className="tl-status">{c.status}</span>}
+                  {c.status && <span className="tl-status">{c.status}</span>}{c.status && ' '}
                   {c.title}
                 </h3>
                 <ul className="tl-items">

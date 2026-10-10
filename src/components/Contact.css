@@ -1,8 +1,9 @@
 .contact {
   background: var(--c-dark);
   color: #fff;
-  padding: var(--space-section) 0 0;
+  padding: var(--space-section) 0 clamp(64px, 8vw, 104px);
 }
+.site-footer-wrap { background: var(--c-dark); padding: 28px 0 32px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 .contact .eyebrow { color: #e9a9ba; }
 
 .contact-inner {
@@ -10,7 +11,6 @@
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 48px;
   align-items: end;
-  padding-bottom: clamp(64px, 8vw, 104px);
 }
 .contact-title { font-size: clamp(30px, 4.2vw, 48px); font-weight: 800; line-height: 1.22; }
 .contact-lead { margin-top: 20px; color: #cdbfc4; font-size: var(--fs-lead); max-width: 520px; }
@@ -18,7 +18,7 @@
 .contact-actions { display: flex; flex-direction: column; gap: 20px; }
 .contact-main { width: 100%; min-height: 64px; font-size: 17px; box-shadow: none; }
 
-.contact-lines { display: grid; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.contact-lines { font-style: normal; display: grid; border-top: 1px solid rgba(255, 255, 255, 0.14); }
 .contact-lines a {
   display: flex;
   justify-content: space-between;
@@ -39,9 +39,6 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
   color: #a99aa0;
 }

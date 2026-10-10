@@ -6,6 +6,7 @@ import Reviews from './components/Reviews.jsx'
 import LectureList from './components/LectureList.jsx'
 import Career from './components/Career.jsx'
 import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Career />
         <Contact />
       </main>
+      <Footer />
     </>
   )
 }

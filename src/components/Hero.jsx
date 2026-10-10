@@ -9,9 +9,9 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <h1 id="hero-title">
-            <span className="hero-kicker">생성형 AI 기업교육 강사 · {profile.name}</span>
+            <span className="hero-kicker">생성형 AI 기업교육 강사 · {profile.name}</span>{' '}
             <span className="hero-slogan">
-              {line1}
+              {line1}{' '}
               <br />
               <em>AI</em>
               {line2.replace(/^AI/, '')}
@@ -43,7 +43,7 @@ export default function Hero() {
           <div className="portrait">
             <img
               src={profile.photo}
-              alt={`${profile.title} ${profile.name} 강사`}
+              alt={`${profile.name} 강사 프로필 사진 – ${profile.title}, 생성형 AI 기업교육 강사`}
               width="460"
               height="640"
               fetchPriority="high"

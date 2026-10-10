@@ -9,7 +9,7 @@ export default function Reviews() {
           <div className="review-copy">
             <span className="eyebrow">Reviews</span>
             <h2 id="reviews-title" className="section-title">
-              수강생 생생 후기는
+              수강생 생생 후기는{' '}
               <br />
               블로그에서 확인하세요
             </h2>
