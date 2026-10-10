@@ -72,3 +72,9 @@ export const programs = [
     ],
   },
 ]
+
+// 블로그 대표 후기 강의 — 강의 목록 섹션에 카드로 나옵니다.
+// 블로그 글을 하나씩 추가하세요. 목록이 비어 있으면 섹션이 화면에 나오지 않습니다.
+// 예시:
+// { title: '○○공사 임직원 챗GPT 실무 특강', desc: '보고서 작성 시간을 줄이는 프롬프트 실습', tag: '공공기관', url: 'https://blog.naver.com/ai_seach/글번호' },
+export const blogLectures = []

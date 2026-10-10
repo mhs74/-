@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx'
 import References from './components/References.jsx'
 import Curriculum from './components/Curriculum.jsx'
 import Reviews from './components/Reviews.jsx'
+import LectureList from './components/LectureList.jsx'
 import Contact from './components/Contact.jsx'
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <References />
         <Curriculum />
         <Reviews />
+        <LectureList />
         <Contact />
       </main>
     </>
