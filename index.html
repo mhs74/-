@@ -82,18 +82,10 @@
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-strong); }
     .btn-ghost { border: 1.5px solid var(--text); color: var(--text); }
-    .pending {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; font-weight: 700; color: var(--pending);
-      background: var(--surface-soft); border: 1px dashed #d6c8c3;
-      padding: 4px 10px; border-radius: 999px; white-space: nowrap;
-    }
-    .pending::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
     .card {
       background: var(--surface); border: 1px solid var(--line);
       border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
     }
-    .card.is-pending { background: repeating-linear-gradient(135deg, #fff, #fff 12px, #fcf9f8 12px, #fcf9f8 24px); box-shadow: none; }
     .grid { display: grid; gap: 20px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -116,11 +108,6 @@
       background: linear-gradient(160deg, #fff, var(--accent-soft));
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
       color: var(--pending); text-align: center; padding: 24px;
-    }
-    .photo .initial {
-      width: 120px; height: 120px; border-radius: 50%; background: var(--surface);
-      display: grid; place-items: center; font-size: 44px; font-weight: 800; color: var(--accent);
-      box-shadow: var(--shadow);
     }
 
     .photo.has-img { padding: 0; border: 0; background: none; aspect-ratio: auto; }
@@ -161,11 +148,10 @@
     .book {
       display: flex; gap: 16px; align-items: flex-start; padding: 22px;
     }
-    .book .spine {
-      flex-shrink: 0; width: 44px; height: 60px; border-radius: 4px 8px 8px 4px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-strong)); box-shadow: inset 4px 0 0 rgba(0,0,0,0.15);
+    .book .cover {
+      flex-shrink: 0; width: 72px; aspect-ratio: 3 / 4; object-fit: cover;
+      border-radius: 3px 6px 6px 3px; box-shadow: 0 6px 16px rgba(60, 30, 40, 0.18);
     }
-    .book:nth-child(even) .spine { background: linear-gradient(135deg, var(--sage), #435a4d); }
     .book h3 { font-size: 16px; margin-bottom: 4px; line-height: 1.45; }
     .book p { margin: 0; color: var(--muted); font-size: 14px; }
 
@@ -189,20 +175,9 @@
     /* ⑤ 실적 */
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 28px; }
     .stat { text-align: center; padding: 36px 20px; }
-    .stat .n { font-size: 40px; font-weight: 800; color: var(--pending); letter-spacing: -0.03em; }
+    .stat .n { font-size: 40px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
     .stat .l { color: var(--muted); margin-top: 6px; }
-    .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
-    .logo-slot {
-      height: 72px; border-radius: 12px; border: 1.5px dashed #d6c8c3;
-      display: grid; place-items: center; color: var(--pending); font-size: 13px; background: var(--surface);
-    }
 
-    /* ⑥ 후기 */
-    .reviews { background: var(--surface); }
-    .review blockquote { margin: 0 0 18px; font-size: 16px; color: var(--pending); }
-    .review .by { font-size: 14px; color: var(--muted); }
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
-    .gallery .logo-slot { height: auto; aspect-ratio: 4 / 3; }
 
     /* ⑦ 섭외 안내 */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; margin-bottom: 36px; }
@@ -233,7 +208,6 @@
     a.channel:hover { background: rgba(255,255,255,0.16); }
     .channel .name { font-weight: 700; }
     .channel .sub { font-size: 14px; color: #d9c5cc; }
-    .channel .pending { background: rgba(255,255,255,0.1); color: #d9c5cc; border-color: rgba(255,255,255,0.3); }
     .form { background: #fff; color: var(--text); border-radius: var(--radius); padding: 30px; }
     .form h3 { font-size: 20px; margin-bottom: 6px; }
     .form .note { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
@@ -246,16 +220,15 @@
     .form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .form button {
       margin-top: 20px; width: 100%; padding: 15px; border: 0; border-radius: 999px;
-      background: #cfc3c6; color: #fff; font: inherit; font-weight: 700; font-size: 16px; cursor: not-allowed;
+      background: var(--accent); color: #fff; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer;
     }
+    .form button:hover { background: var(--accent-strong); }
 
     footer { padding: 32px 0; font-size: 14px; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
 
     /* 반응형 */
     @media (max-width: 960px) {
       .grid-3, .steps { grid-template-columns: repeat(2, 1fr); }
-      .logos { grid-template-columns: repeat(3, 1fr); }
-      .gallery { grid-template-columns: repeat(2, 1fr); }
       .hero-inner, .about-grid, .contact-grid, .history { grid-template-columns: 1fr; }
       .book-list { grid-template-columns: repeat(2, 1fr); }
       .photo { max-width: 360px; aspect-ratio: 1 / 1; }
@@ -273,7 +246,6 @@
       section { padding: 64px 0; }
       .wrap { padding: 0 16px; }
       .grid-3, .grid-2, .steps, .stats, .book-list { grid-template-columns: 1fr; }
-      .logos { grid-template-columns: repeat(2, 1fr); }
       .form .row { grid-template-columns: 1fr; }
       .terms th { width: 38%; }
       .terms th, .terms td { padding: 14px 16px; }
@@ -294,7 +266,7 @@
       <li><a href="#fields">전문 분야</a></li>
       <li><a href="#programs">강의 프로그램</a></li>
       <li><a href="#books">저서</a></li>
-      <li><a href="#records">출강 실적</a></li>
+      
       <li><a href="#booking">섭외 안내</a></li>
       <li><a class="cta-link" href="#contact">섭외 문의</a></li>
     </ul>
@@ -445,57 +417,48 @@
       <h2>강의 프로그램</h2>
       <p class="lead">기관과 수강 대상에 맞춰 시간과 내용을 조정할 수 있습니다.</p>
       <div class="grid grid-3">
-        <article class="card program is-pending">
+        <article class="card program">
           <span class="num">PROGRAM 01</span>
           <h3>생성형 AI 챗GPT 300% 활용법</h3>
           <dl>
-            <dt>대상</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>시간</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>내용</dt><dd><span class="pending">준비 중</span></dd>
+            <dt>대상</dt><dd>AI가 처음인 직장인·소상공인·시니어</dd>
+            <dt>시간</dt><dd>2시간 특강 ~ 4회 과정</dd>
+            <dt>내용</dt><dd>스마트폰으로 ChatGPT 시작하기, 업무·일상 프롬프트 실습, 문서·글쓰기·기획 자동화</dd>
           </dl>
         </article>
-        <article class="card program is-pending">
+        <article class="card program">
           <span class="num">PROGRAM 02</span>
           <h3>AI로 혁신하는 화장품 홍보·마케팅</h3>
           <dl>
-            <dt>대상</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>시간</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>내용</dt><dd><span class="pending">준비 중</span></dd>
+            <dt>대상</dt><dd>뷰티·웰니스 업계 종사자, 매장 운영자</dd>
+            <dt>시간</dt><dd>2~3시간 특강</dd>
+            <dt>내용</dt><dd>AI로 상품 소개 글·SNS 콘텐츠 만들기, 고객 응대 문구, 홍보 이미지 제작</dd>
           </dl>
         </article>
-        <article class="card program is-pending">
+        <article class="card program">
           <span class="num">PROGRAM 03</span>
           <h3>SNS가 허공에 머물지 않는 퍼스널 브랜딩</h3>
           <dl>
-            <dt>대상</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>시간</dt><dd><span class="pending">준비 중</span></dd>
-            <dt>내용</dt><dd><span class="pending">준비 중</span></dd>
+            <dt>대상</dt><dd>강사·1인 기업가·소상공인</dd>
+            <dt>시간</dt><dd>2시간 특강 ~ 3회 과정</dd>
+            <dt>내용</dt><dd>나만의 브랜드 정의, GEO 마케팅으로 AI 검색에 노출되기, SNS 운영 전략</dd>
           </dl>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ⑤ 출강 실적 -->
+  <!-- ⑤ 주요 이력 -->
   <section id="records">
     <div class="wrap">
-      <span class="eyebrow">RECORDS</span>
-      <h2>출강 실적</h2>
-      <p class="lead">강의를 함께한 기관과 수강생 수치는 곧 공개합니다.</p>
+      <span class="eyebrow">HIGHLIGHTS</span>
+      <h2>숫자로 보는 서미화</h2>
+      <p class="lead">현장 교육, 연구, 집필을 함께 해 온 이력입니다.</p>
       <div class="stats">
-        <div class="card stat"><div class="n" style="color:var(--accent)">26년</div><div class="l">아모레퍼시픽 교육 경력</div></div>
-        <div class="card stat"><div class="n">—</div><div class="l">누적 강의 횟수 <span class="pending">준비 중</span></div></div>
-        <div class="card stat"><div class="n">—</div><div class="l">누적 수강생 <span class="pending">준비 중</span></div></div>
+        <div class="card stat"><div class="n">26년</div><div class="l">아모레퍼시픽 교육 경력</div></div>
+        <div class="card stat"><div class="n">8권</div><div class="l">저서 · 공저</div></div>
+        <div class="card stat"><div class="n">10곳+</div><div class="l">연구원 · 협회 활동</div></div>
       </div>
-      <div class="logos" aria-label="출강 기관 로고 준비 중">
-        <div class="logo-slot">기관 로고</div>
-        <div class="logo-slot">기관 로고</div>
-        <div class="logo-slot">기관 로고</div>
-        <div class="logo-slot">기관 로고</div>
-        <div class="logo-slot">기관 로고</div>
-        <div class="logo-slot">기관 로고</div>
-      </div>
-      <p style="margin-top:16px"><span class="pending">출강 기관 목록 준비 중</span></p>
     </div>
   </section>
 
@@ -506,41 +469,15 @@
       <h2>저서</h2>
       <p class="lead">현장의 경험과 AI 활용 노하우를 책으로 전합니다.</p>
       <div class="book-list">
-        <article class="card book"><div class="spine"></div><div><h3>생성형AI 챗GPT 300% 활용법</h3><p>모바일 생성형 AI 실전 활용</p></div></article>
-        <article class="card book"><div class="spine"></div><div><h3>교육담당자를 위한 강사 편람 『인문학강의』</h3><p>교육 담당자를 위한 강사 가이드</p></div></article>
-        <article class="card book"><div class="spine"></div><div><h3>세상을 바꾸는 퍼스널 브랜딩</h3><p>왜 SNS가 허공에 머무는 이유?</p></div></article>
-        <article class="card book"><div class="spine"></div><div><h3>위기를 기회로 바꾸는 강사</h3><p>AI와 화장품 홍보와 마케팅 혁신하기</p></div></article>
-        <article class="card book"><div class="spine"></div><div><h3>지금 떠나면 행복해집니다</h3></div></article>
-        <article class="card book"><div class="spine"></div><div><h3>2024년 인지문학지</h3></div></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑥ 후기·현장 -->
-  <section id="reviews">
-    <div class="wrap">
-      <span class="eyebrow">REVIEWS</span>
-      <h2>수강 후기 · 강의 현장</h2>
-      <p class="lead">직접 들어 본 분들의 이야기를 곧 전해드립니다.</p>
-      <div class="grid grid-3">
-        <article class="card review is-pending">
-          <blockquote>“수강 후기가 들어갈 자리입니다.”</blockquote>
-          <span class="pending">후기 준비 중</span>
-        </article>
-        <article class="card review is-pending">
-          <blockquote>“수강 후기가 들어갈 자리입니다.”</blockquote>
-          <span class="pending">후기 준비 중</span>
-        </article>
-        <article class="card review is-pending">
-          <blockquote>“수강 후기가 들어갈 자리입니다.”</blockquote>
-          <span class="pending">후기 준비 중</span>
-        </article>
-      </div>
-      <div class="gallery" aria-label="강의 현장 사진 준비 중">
-        <div class="logo-slot">현장 사진 준비 중</div>
-        <div class="logo-slot">현장 사진 준비 중</div>
-        <div class="logo-slot">현장 사진 준비 중</div>
-        <div class="logo-slot">현장 사진 준비 중</div>
+        <article class="card book"><img class="cover" src="images/books/chatgpt.jpg" alt="『생성형AI 챗GPT 300% 활용법』 표지"><div><h3>생성형AI 챗GPT 300% 활용법</h3><p>모바일 생성형 AI 실전 활용</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/geo.jpg" alt="『이것이 GEO마케팅이다』 표지"><div><h3>이것이 GEO마케팅이다</h3><p>AI 검색 시대의 마케팅</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/election.jpg" alt="『AI 활용 선거전략 II』 표지"><div><h3>AI 활용 선거전략 II</h3><p>AI로 바꾸는 선거 전략</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/humanities.jpg" alt="『교육담당자를 위한 강사 편람 『인문학강의』』 표지"><div><h3>교육담당자를 위한 강사 편람 『인문학강의』</h3><p>교육 담당자를 위한 강사 가이드</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/branding.jpg" alt="『세상을 바꾸는 퍼스널 브랜딩』 표지"><div><h3>세상을 바꾸는 퍼스널 브랜딩</h3><p>왜 SNS가 허공에 머무는 이유?</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/crisis.jpg" alt="『위기를 기회로 바꾸는 강사』 표지"><div><h3>위기를 기회로 바꾸는 강사</h3><p>12인의 가슴 뛰는 스토리 · AI와 화장품 홍보와 마케팅 혁신하기</p></div></article>
+        <article class="card book"><img class="cover" src="images/books/life2.jpg" alt="『인생2막이 더 빛나는 그들의 이야기』 표지"><div><h3>인생2막이 더 빛나는 그들의 이야기</h3></div></article>
+        <article class="card book"><img class="cover" src="images/books/happy.jpg" alt="『지금 떠나면 행복해집니다』 표지"><div><h3>지금 떠나면 행복해집니다</h3></div></article>
+        <article class="card book"><img class="cover" src="images/books/inji.jpg" alt="『2024년 인지문학지』 표지"><div><h3>2024년 인지문학지</h3></div></article>
       </div>
     </div>
   </section>
@@ -558,10 +495,10 @@
         <div class="card step"><h3>강의 진행</h3><p>실습 중심으로 바로 쓰는 AI를 전합니다.</p></div>
       </div>
       <table class="terms">
-        <tr><th>강의 방식</th><td><span class="pending">준비 중</span></td></tr>
-        <tr><th>가능 지역</th><td><span class="pending">준비 중</span></td></tr>
-        <tr><th>강의 시간</th><td><span class="pending">준비 중</span></td></tr>
-        <tr><th>강사료</th><td><span class="pending">준비 중</span></td></tr>
+        <tr><th>강의 방식</th><td>오프라인 출강 · 온라인(Zoom) 강의</td></tr>
+        <tr><th>가능 지역</th><td>전국 (지역별 일정 협의)</td></tr>
+        <tr><th>강의 시간</th><td>1회 특강부터 다회차 과정까지 맞춤 구성</td></tr>
+        <tr><th>강사료</th><td>강의 형태와 일정에 따라 협의</td></tr>
       </table>
     </div>
   </section>
@@ -572,7 +509,7 @@
       <div>
         <span class="eyebrow">CONTACT</span>
         <h2>강의 섭외 문의</h2>
-        <p class="lead">아래 채널에서 서미화 강사의 활동을 확인하실 수 있습니다.</p>
+        <p class="lead">이메일이나 전화로 편하게 문의해 주세요. 블로그와 인스타그램에서 강의 활동도 확인하실 수 있습니다.</p>
         <div class="channels">
           <a class="channel" href="https://m.blog.naver.com/ai_seach" target="_blank" rel="noopener">
             <span><span class="name">네이버 블로그</span><br><span class="sub">뷰티앤웰니스AI연구소 | 모바일ChatGPT강사</span></span><span aria-hidden="true">↗</span>
@@ -583,25 +520,39 @@
           <a class="channel" href="https://litt.ly/min.ai" target="_blank" rel="noopener">
             <span><span class="name">링크 모음</span><br><span class="sub">litt.ly/min.ai</span></span><span aria-hidden="true">↗</span>
           </a>
-          <div class="channel">
-            <span><span class="name">이메일 · 전화 · 카카오톡</span></span><span class="pending">준비 중</span>
-          </div>
+          <a class="channel" href="mailto:meshe921@gmail.com">
+            <span><span class="name">이메일</span><br><span class="sub">meshe921@gmail.com</span></span><span aria-hidden="true">✉</span>
+          </a>
+          <a class="channel" href="tel:01021262533">
+            <span><span class="name">전화</span><br><span class="sub">010-2126-2533</span></span><span aria-hidden="true">☎</span>
+          </a>
         </div>
       </div>
-      <form class="form" onsubmit="return false" aria-describedby="form-note">
+      <form class="form" id="inquiry">
         <h3>섭외 문의서</h3>
-        <p class="note" id="form-note">온라인 문의 접수는 준비 중입니다. 그동안은 블로그나 인스타그램으로 연락해 주세요.</p>
+        <p class="note">작성 후 보내기를 누르면 메일 앱이 열리며, 입력하신 내용이 meshe921@gmail.com으로 전달됩니다.</p>
         <div class="row">
-          <div><label for="org">기관명</label><input id="org" placeholder="예: ○○협회" disabled></div>
-          <div><label for="name">담당자</label><input id="name" placeholder="성함" disabled></div>
+          <div><label for="org">기관명</label><input id="org" placeholder="예: ○○협회" required></div>
+          <div><label for="name">담당자</label><input id="name" placeholder="성함" required></div>
         </div>
         <div class="row">
-          <div><label for="date">희망 일정</label><input id="date" placeholder="예: 11월 셋째 주" disabled></div>
-          <div><label for="size">예상 인원</label><input id="size" placeholder="예: 30명" disabled></div>
+          <div><label for="phone">연락처</label><input id="phone" type="tel" placeholder="010-0000-0000" required></div>
+          <div><label for="date">희망 일정</label><input id="date" placeholder="예: 11월 셋째 주"></div>
+        </div>
+        <div class="row">
+          <div><label for="size">예상 인원</label><input id="size" placeholder="예: 30명"></div>
+          <div><label for="topic">관심 강의</label>
+            <select id="topic">
+              <option>생성형 AI 챗GPT 300% 활용법</option>
+              <option>AI로 혁신하는 화장품 홍보·마케팅</option>
+              <option>SNS가 허공에 머물지 않는 퍼스널 브랜딩</option>
+              <option>기타 · 맞춤 강의</option>
+            </select>
+          </div>
         </div>
         <label for="msg">문의 내용</label>
-        <textarea id="msg" placeholder="교육 대상과 원하시는 내용을 적어주세요." disabled></textarea>
-        <button type="submit" disabled>문의 접수 준비 중</button>
+        <textarea id="msg" placeholder="교육 대상과 원하시는 내용을 적어주세요."></textarea>
+        <button type="submit">문의 메일 보내기</button>
       </form>
     </div>
   </section>
@@ -623,6 +574,17 @@
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   }));
+  document.getElementById('inquiry').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const subject = `[강의 섭외 문의] ${v('org')} - ${v('topic')}`;
+    const body = [
+      `기관명: ${v('org')}`, `담당자: ${v('name')}`, `연락처: ${v('phone')}`,
+      `희망 일정: ${v('date')}`, `예상 인원: ${v('size')}`, `관심 강의: ${v('topic')}`,
+      '', '문의 내용:', v('msg')
+    ].join('\n');
+    location.href = `mailto:meshe921@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
 </script>
 </body>
 </html>
