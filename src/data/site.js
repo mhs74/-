@@ -115,3 +115,11 @@ export const career = [
     ],
   },
 ]
+
+// 섭외 문의 폼
+// accessKey 를 넣으면 문의가 이메일로 자동 전송됩니다. (https://web3forms.com 에서 이메일 인증 후 발급)
+// 비어 있으면 [보내기]를 눌렀을 때 방문자의 메일 앱이 내용이 채워진 채로 열립니다.
+export const inquiryForm = {
+  accessKey: '',
+  formats: ['오프라인 출강', '온라인(Zoom 등)', '협의 필요'],
+}
