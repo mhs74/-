@@ -24,7 +24,7 @@ export const proofPoints = [
 
 // 경력·활동 기관 (출강 기관 목록을 받으면 clients 로 따로 추가하세요)
 export const affiliations = [
-  { name: '아모레퍼시픽', role: '교육·강사 26년 · 연수직영점 대표', mark: 'AP' },
+  { name: '아모레퍼시픽', role: '前 교육·강사 26년 · 연수직영점 대표', mark: 'AP' },
   { name: '(사)중소상공인SNS지원협회', role: '부회장', mark: 'SNS' },
   { name: '한국지식문화원', role: '부회장', mark: 'KC' },
   { name: 'AI리터러시협회', role: '이사', mark: 'AIL' },
