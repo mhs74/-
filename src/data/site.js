@@ -51,7 +51,7 @@ export const programs = [
     id: 'marketing',
     tag: '뷰티 · 유통 · 서비스',
     title: 'AI로 혁신하는 화장품 홍보 · 마케팅',
-    target: '뷰티 · 웰니스 기업 마케팅 · 영업 · 매장 담당자',
+    target: '뷰티 · 웰니스 기업 마케팅 · 영업 담당자',
     duration: '2 ~ 3시간 특강',
     outcomes: [
       'AI로 상품 소개 글 · SNS 콘텐츠 제작',
