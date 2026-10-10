@@ -1,0 +1,40 @@
+/*
+  디자인 토큰 — 색상 · 글꼴 · 여백 · 버튼 규칙을 한곳에서 관리합니다.
+  참고 사이트 분석(JinnyDESIGN.md)이 완료되면 이 값만 바꿔 전체 톤을 맞출 수 있습니다.
+*/
+:root {
+  /* 색상 */
+  --c-bg: #fbf9f7;
+  --c-surface: #ffffff;
+  --c-surface-2: #f4efeb;
+  --c-ink: #1d1a1b;
+  --c-ink-2: #4a4245;
+  --c-muted: #7a7074;
+  --c-line: #e8e0db;
+  --c-accent: #a3475f;
+  --c-accent-strong: #84344a;
+  --c-accent-soft: #f5e3e8;
+  --c-dark: #221b1e;
+
+  /* 글꼴 */
+  --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --fs-display: clamp(44px, 7.6vw, 96px);
+  --fs-h2: clamp(28px, 3.6vw, 40px);
+  --fs-h3: 21px;
+  --fs-lead: clamp(17px, 1.6vw, 19px);
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  /* 여백 */
+  --space-section: clamp(80px, 11vw, 136px);
+  --space-gutter: 24px;
+  --max: 1180px;
+
+  /* 모양 */
+  --radius-sm: 10px;
+  --radius: 20px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(29, 26, 27, 0.04), 0 12px 32px rgba(29, 26, 27, 0.06);
+  --shadow-lift: 0 2px 4px rgba(29, 26, 27, 0.05), 0 20px 44px rgba(29, 26, 27, 0.1);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

@@ -1,0 +1,62 @@
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px 28px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.program-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: #dccbc5; }
+
+.program-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.program-num { font-size: 15px; font-weight: 800; color: var(--c-accent); letter-spacing: 0.06em; }
+.program-tag {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--c-accent-strong);
+  background: var(--c-accent-soft);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.program-title { font-size: var(--fs-h3); font-weight: 750; min-height: 2.5em; }
+
+.program-meta { margin: 22px 0 0; display: grid; gap: 8px; padding: 18px 0; border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.program-meta div { display: grid; grid-template-columns: 40px 1fr; gap: 10px; font-size: var(--fs-small); }
+.program-meta dt { color: var(--c-muted); font-weight: 600; }
+.program-meta dd { margin: 0; color: var(--c-ink-2); }
+
+.program-outcomes { list-style: none; margin: 20px 0 28px; padding: 0; display: grid; gap: 10px; flex: 1; }
+.program-outcomes li { position: relative; padding-left: 26px; font-size: 15px; color: var(--c-ink-2); line-height: 1.55; }
+.program-outcomes li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--c-accent);
+  border-bottom: 2px solid var(--c-accent);
+  transform: rotate(-45deg);
+}
+
+.program-link {
+  align-self: flex-start;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--c-ink);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.program-link:hover { color: var(--c-accent); border-color: var(--c-accent); }
+
+@media (max-width: 960px) {
+  .program-grid { grid-template-columns: 1fr; max-width: 640px; }
+  .program-title { min-height: 0; }
+}
