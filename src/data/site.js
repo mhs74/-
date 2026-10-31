@@ -115,3 +115,29 @@ export const career = [
     ],
   },
 ]
+
+// 인스타그램 스킨 섹션 — 인스타그램 프로필 화면처럼 보이는 영역입니다.
+// highlights: 프로필 아래 동그란 하이라이트 (label 은 짧게)
+// posts: 3칸 격자 게시물. image 를 넣으면 사진이, 없으면 글자 카드가 나옵니다.
+//   image 는 public/images/insta/ 에 사진을 넣고 'insta/파일이름.jpg' 처럼 적으세요.
+//   url 에 게시물 주소(https://www.instagram.com/p/...)를 넣으면 그 게시물로, 없으면 프로필로 이동합니다.
+export const instagram = {
+  handle: 'bw.ai_lab',
+  displayName: '뷰티앤웰니스AI연구소',
+  bio: ['아름다움에 AI를 더하다 ✨', '기업·공공기관 생성형 AI 실무 교육', '강의 현장 · AI 활용 팁 · 신간 소식'],
+  highlights: [
+    { label: '챗GPT', emoji: '💬' },
+    { label: '뷰티AI', emoji: '💄' },
+    { label: '브랜딩', emoji: '🌱' },
+    { label: '강의현장', emoji: '🎤' },
+    { label: '저서', emoji: '📚' },
+  ],
+  posts: [
+    { title: '챗GPT 300% 활용법', sub: '임직원 AI 특강' },
+    { title: '스마트폰 하나로 AI 시작', sub: '모바일 생성형AI' },
+    { title: 'AI 화장품 마케팅', sub: '뷰티 · 유통' },
+    { title: '퍼스널 브랜딩', sub: 'AI 시대의 나' },
+    { title: 'GEO 마케팅', sub: 'AI 검색 노출 전략' },
+    { title: '숏폼 영상 만들기', sub: 'AI 영상 실습' },
+  ],
+}

@@ -16,6 +16,7 @@ npm run preview  # 빌드 결과 확인 http://localhost:4173
 | 바꾸고 싶은 것 | 파일 |
 |---|---|
 | 문구 · 경력 · 강의 · 연락처 | `src/data/site.js` |
+| 인스타그램 스킨 (프로필 소개 · 하이라이트 · 게시물 격자) | `src/data/site.js` 의 `instagram` |
 | 색상 · 글꼴 · 여백 · 버튼 | `src/styles/tokens.css` |
 | 검색 노출 정보 (제목, 설명, 키워드) | `index.html` |
 | 배포 주소 (canonical · sitemap 자동 생성) | `site.config.js` |
