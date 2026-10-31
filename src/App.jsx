@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx'
 import References from './components/References.jsx'
 import Curriculum from './components/Curriculum.jsx'
 import Reviews from './components/Reviews.jsx'
+import Instagram from './components/Instagram.jsx'
 import LectureList from './components/LectureList.jsx'
 import Career from './components/Career.jsx'
 import Contact from './components/Contact.jsx'
@@ -18,6 +19,7 @@ export default function App() {
         <References />
         <Curriculum />
         <Reviews />
+        <Instagram />
         <LectureList />
         <Career />
         <Contact />
